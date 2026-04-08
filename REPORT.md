@@ -326,7 +326,7 @@ respect to the input (not the weights). Even tiny per-pixel changes are
 devastating in high-dimensional spaces because all perturbations push in
 the same wrong direction constructively.
 
-![Adversarial Examples](figures/adversarial_examples.png)
+![Adversarial Examples](figures/Adversarial_examples.png)
 ![Adversarial Robustness](figures/adversarial_robustness.png)
 
 **Finding:** the tuned model degraded more slowly under FGSM attack than
