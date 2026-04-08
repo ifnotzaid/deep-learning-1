@@ -102,7 +102,7 @@ via the generalization gap: test_loss − train_loss. A large positive gap
 indicates high variance (overfitting). A near-zero or negative gap indicates
 well-regularized behavior.
 
-![Bias-Variance Analysis](bias_variance_analysis.png)
+![Bias-Variance Analysis](figures/bias_variance_analysis.png)
 
 ### 3.4 K-Fold Cross-Validation
 
@@ -127,7 +127,7 @@ different data splits and the estimate is reliable. The standard error of
 the mean is σ/√m = 0.0015, confirming the Week 2 relationship between
 sample size and estimate precision.
 
-![K-Fold Results](kfold_results.png)
+![K-Fold Results](figures/kfold_results.png)
 
 ### 3.5 Maximum Likelihood Estimation
 
@@ -166,7 +166,7 @@ with mini-batch SGD and learning rate decay (lr × 0.95 per epoch).
 **Results:** Val accuracy ~49–55%, with a visible overfitting gap confirming
 the need for regularization.
 
-![NumPy MLP Curves](numpy_mlp_curves.png)
+![NumPy MLP Curves](figures/numpy_mlp_curves.png)
 
 ### 4.2 Why Linear Models Are Insufficient
 
@@ -228,7 +228,7 @@ effects.
 | Full Reg | Dropout+BN+L2+LabelSmooth+Aug | 0.5151 | 0.5323 | −0.0301 | 40 |
 | Tuned | Full Reg + tuned λ,p | 0.5797 | 0.5779 | +0.0001 | 39 |
 
-![Final MLP Comparison](final_comparison.png)
+![Final MLP Comparison](figures/final_comparison.png)
 
 ### 5.3 L2 Regularization
 
@@ -303,7 +303,7 @@ harder than evaluation.
 test set) by sweeping λ ∈ {0, 1e-5, 1e-4, 1e-3, 1e-2} and dropout p ∈
 {0.0, 0.2, 0.3, 0.5, 0.7}.
 
-![Hyperparameter Tuning](hyperparameter_tuning.png)
+![Hyperparameter Tuning](figures/hyperparameter_tuning.png)
 
 **Key finding:** best_wd=1e-4, best_dp=0.0. The optimal dropout rate being
 zero when BatchNorm is present is a significant result — it demonstrates
@@ -326,8 +326,8 @@ respect to the input (not the weights). Even tiny per-pixel changes are
 devastating in high-dimensional spaces because all perturbations push in
 the same wrong direction constructively.
 
-![Adversarial Examples](adversarial_examples.png)
-![Adversarial Robustness](adversarial_robustness.png)
+![Adversarial Examples](figures/adversarial_examples.png)
+![Adversarial Robustness](figures/adversarial_robustness.png)
 
 **Finding:** the tuned model degraded more slowly under FGSM attack than
 the baseline, confirming that regularization produces smoother decision
@@ -403,7 +403,7 @@ present.
 This finding empirically validates the Week 5 claim that BatchNorm
 "reduces sensitivity to initialization."
 
-![Init Comparison](init_comparison.png)
+![Init Comparison](figures/init_comparison.png)
 
 ### 6.4 Optimizer Shootout
 
@@ -418,7 +418,7 @@ constant.
 | RMSProp (ρ=0.9) | 0.7973 | 20 | Per-parameter adaptive rates |
 | Adam (β₁=0.9, β₂=0.999) | 0.8015 | 30 | Momentum + adaptive rates |
 
-![Optimizer Shootout](optimizer_shootout.png)
+![Optimizer Shootout](figures/optimizer_shootout.png)
 
 **SGD (73.3%):** slowest convergence, lowest accuracy. On loss surfaces
 shaped like narrow canyons, SGD zigzags across steep walls while making
@@ -461,7 +461,7 @@ Four scheduling strategies were compared using Adam as the base optimizer:
 | Step Decay | 0.8008 | ×0.1 every 15 epochs |
 | Warmup + Cosine | **0.8392** | Linear warmup → cosine decay |
 
-![LR Scheduling](lr_scheduling.png)
+![LR Scheduling](figures/lr_scheduling.png)
 
 **Fixed LR (82.1%):** strong baseline. Adam with a well-chosen fixed rate
 already performs well — no schedule needed when the rate happens to be
@@ -503,7 +503,7 @@ optimizer:
 | 128 | 0.7966 | 0.8000 | −0.003 |
 | 512 | 0.7639 | 0.7729 | −0.009 |
 
-![Batch Size Analysis](batch_size_analysis.png)
+![Batch Size Analysis](figures/batch_size_analysis.png)
 
 **Finding:** BS=32 achieves the highest validation accuracy (81.7%), 4.4%
 above BS=512 (77.3%). This confirms the Week 5 prediction that smaller
@@ -538,7 +538,7 @@ these batch sizes.
 | MLP Tuned | MLP | 0.5797 | 0.5779 | +0.000 |
 | CNN (Adam) | CNN | ~0.84 | **0.7949** | — |
 
-![Complete Comparison](complete_comparison.png)
+![Complete Comparison](figures/complete_comparison.png)
 
 ### 7.2 CNN Per-Class Analysis
 
@@ -548,7 +548,7 @@ The CNN confusion matrix reveals consistent findings with the MLP:
 - **Ship and Car** are easiest — distinctive shapes and color profiles
 - All classes show substantially improved recognition vs the best MLP
 
-![CNN Confusion Matrix](cnn_confusion_matrix.png)
+![CNN Confusion Matrix](figures/cnn_confusion_matrix.png)
 
 ### 7.3 Summary of All Findings
 
