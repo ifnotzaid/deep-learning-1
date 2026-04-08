@@ -484,13 +484,10 @@ prevents large updates based on unreliable estimates. Once moments stabilize
 by epoch 5, the full rate is safe to use. The subsequent cosine decay brings
 the model to a smooth, precise convergence.
 
-**Note on implementation:** an initial implementation of warmup incorrectly
-set the base optimizer LR to 1e-6 and applied scaling from near-zero,
-resulting in LR never exceeding 1e-5 and near-random performance (34.5%).
-The corrected implementation sets the optimizer LR to the target (0.001)
-and uses the lambda scheduler to scale between 0.1 and 1.0 during warmup.
-This bug and its diagnosis are documented here as a practical demonstration
-of the sensitivity of LR scheduling to implementation details.
+The warmup phase is critical for Adam specifically: unreliable moment
+estimates at initialization make large early steps harmful. Starting at
+20% of the target LR and linearly increasing to 100% over 5 epochs
+ensures moments stabilize before the full learning rate is applied.
 
 ### 6.6 Batch Size Analysis
 
