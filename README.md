@@ -14,8 +14,8 @@ methodology, and results.
 ├── responsibilities/      # Individual contributions
 │   ├── 220911692.md
 │   ├── 220911742.md
-│   ├── STUDENTID3.md
-│   └── STUDENTID4.md
+│   ├── 210911197.md
+│   └── 210911108.md
 └── figures/               # All experiment figures
 
 ## Results Summary
