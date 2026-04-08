@@ -69,8 +69,8 @@ improve generalization.
 satisfying the i.i.d. assumption (Week 2) — both training and test sets are
 drawn independently from the same underlying distribution.
 
-![Sample Images](sample_images.png)
-![Class Distribution](class_distribution.png)
+![Sample Images](figures/sample_images.png)
+![Class Distribution](figures/class_distribution.png)
 
 ---
 
