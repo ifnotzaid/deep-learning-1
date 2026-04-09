@@ -608,14 +608,6 @@ All experiments were conducted in Google Colab with a T4 GPU.
 2. Enable GPU: Runtime → Change runtime type → T4 GPU
 3. Run cells in order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 →
    11 → 12 → 13 → 14 → 15 → 16 → 16b → 17 → 18 → 19
-4. All models and results are saved to Google Drive at
-   `/content/drive/MyDrive/CIFAR10_Project`
-
-**Reproducibility:** `set_seed(42)` is called at the start of the notebook,
-fixing all random seeds (PyTorch, NumPy, Python random) for deterministic
-results.
-
-**Estimated runtime:** approximately 3–4 hours total on T4 GPU.
 
 ---
 
